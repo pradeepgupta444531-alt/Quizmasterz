@@ -1,0 +1,1577 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7ff;
+    color: #222;
+}
+
+
+/* NAVBAR */
+
+.navbar {
+    height: 70px;
+    padding: 0 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: white;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #6c4df6;
+}
+
+.navbar nav {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #444;
+    font-weight: 600;
+}
+
+.navbar a:hover {
+    color: #6c4df6;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 550px;
+    padding: 80px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #6c4df6,
+        #9b5cff,
+        #ff5fa2
+    );
+
+    color: white;
+}
+
+
+/* HERO TEXT */
+
+.hero-text {
+    max-width: 600px;
+}
+
+.small-title {
+    font-size: 14px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: #ffe66d;
+}
+
+.description {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+
+/* START BUTTON */
+
+.start-btn {
+    border: none;
+    padding: 16px 32px;
+
+    border-radius: 50px;
+
+    background: #ffe66d;
+    color: #222;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+/* HERO CARD */
+
+.hero-card {
+    width: 350px;
+
+    padding: 35px;
+
+    background: rgba(255,255,255,0.18);
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    backdrop-filter: blur(10px);
+}
+
+.trophy {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.hero-card h2 {
+    margin-bottom: 15px;
+}
+
+.hero-card p {
+    line-height: 1.6;
+}
+
+
+/* STATS */
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+
+    margin-top: 30px;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stats strong {
+    font-size: 25px;
+}
+
+.stats small {
+    font-size: 12px;
+}
+
+
+/* CATEGORIES */
+
+.categories {
+    padding: 80px 8%;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+.category-subtitle {
+    color: #777;
+    margin-bottom: 45px;
+}
+
+
+/* CATEGORY CONTAINER */
+
+.category-container {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* CATEGORY CARD */
+
+.category-card {
+    padding: 30px 20px;
+
+    border-radius: 20px;
+
+    background: white;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+
+    transition: 0.3s;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+}
+
+.category-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.category-card h3 {
+    margin-bottom: 10px;
+}
+
+.category-card p {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+
+    min-height: 45px;
+}
+
+.category-card button {
+    margin-top: 20px;
+
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* DIFFERENT CATEGORY COLORS */
+
+.civil {
+    border-top: 5px solid #ff7b54;
+}
+
+.civil button {
+    background: #ff7b54;
+}
+
+
+.math {
+    border-top: 5px solid #4d96ff;
+}
+
+.math button {
+    background: #4d96ff;
+}
+
+
+.gk {
+    border-top: 5px solid #00b894;
+}
+
+.gk button {
+    background: #00b894;
+}
+
+
+.computer {
+    border-top: 5px solid #9b5cff;
+}
+
+.computer button {
+    background: #9b5cff;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: #20202b;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+
+/* MOBILE DESIGN */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .navbar nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 5%;
+    }
+
+    .hero-card {
+        width: 100%;
+    }
+
+    .categories {
+        padding: 60px 5%;
+    }
+
+    .category-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* =========================
+   QUIZ PAGE
+========================= */
+
+.quiz-page {
+    display: none;
+
+    min-height: 75vh;
+
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f7ff,
+            #eee8ff
+        );
+}
+
+
+.quiz-container {
+    max-width: 800px;
+
+    margin: auto;
+}
+
+
+.quiz-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+    font-weight: bold;
+
+    color: #555;
+}
+
+
+#timer {
+    background: #ff5fa2;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+}
+
+
+/* PROGRESS BAR */
+
+.progress-container {
+    height: 10px;
+
+    background: #ddd;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-bottom: 30px;
+}
+
+
+#progress-bar {
+    height: 100%;
+
+    width: 10%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6c4df6,
+            #ff5fa2
+        );
+
+    transition: 0.3s;
+}
+
+
+/* QUESTION CARD */
+
+.question-card {
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.1);
+}
+
+
+#question {
+    font-size: 25px;
+
+    line-height: 1.5;
+
+    margin-bottom: 30px;
+}
+
+
+/* ANSWERS */
+
+#answers {
+    display: grid;
+
+    gap: 15px;
+}
+
+
+.answer-btn {
+    width: 100%;
+
+    padding: 16px;
+
+    border: 2px solid #e3e3e3;
+
+    border-radius: 12px;
+
+    background: white;
+
+    text-align: left;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.answer-btn:hover {
+    border-color: #6c4df6;
+
+    background: #f5f2ff;
+
+    transform: translateX(5px);
+}
+
+
+.answer-btn.correct {
+    background: #d4f8df;
+
+    border-color: #20a957;
+
+    color: #08752f;
+}
+
+
+.answer-btn.wrong {
+    background: #ffe0e5;
+
+    border-color: #ef476f;
+
+    color: #b00020;
+}
+
+
+/* NEXT BUTTON */
+
+#next-btn {
+    margin-top: 30px;
+
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #6c4df6;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    float: right;
+
+    transition: 0.3s;
+}
+
+
+#next-btn:hover {
+    background: #5438d1;
+
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   RESULT PAGE
+========================= */
+
+.result-page {
+    display: none;
+
+    min-height: 75vh;
+
+    padding: 70px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6c4df6,
+            #ff5fa2
+        );
+}
+
+
+.result-card {
+    max-width: 500px;
+
+    margin: auto;
+
+    padding: 50px 30px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.2);
+}
+
+
+.result-icon {
+    font-size: 70px;
+
+    margin-bottom: 20px;
+}
+
+
+.result-card h1 {
+    margin-bottom: 15px;
+}
+
+
+.score {
+    font-size: 55px;
+
+    font-weight: bold;
+
+    color: #6c4df6;
+
+    margin: 20px 0;
+}
+
+
+.home-btn {
+    margin-top: 15px;
+
+    display: block;
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 2px solid #6c4df6;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #6c4df6;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+/* MOBILE QUIZ */
+
+@media (max-width: 600px) {
+
+    .question-card {
+        padding: 25px 20px;
+    }
+
+    #question {
+        font-size: 20px;
+    }
+
+    .quiz-page {
+        padding: 40px 15px;
+    }
+
+}
+/* =====================================
+   QUIZ SETUP
+===================================== */
+
+.setup-page {
+
+    display: none;
+
+    min-height: 75vh;
+
+    padding: 60px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f7ff,
+            #eee8ff
+        );
+}
+
+
+.setup-card {
+
+    max-width: 550px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.12);
+}
+
+
+.setup-icon {
+
+    font-size: 60px;
+
+    text-align: center;
+
+    margin-bottom: 10px;
+}
+
+
+.setup-card h1 {
+
+    text-align: center;
+
+    font-size: 32px;
+
+    margin-bottom: 8px;
+}
+
+
+.setup-subtitle {
+
+    text-align: center;
+
+    color: #777;
+
+    margin-bottom: 30px;
+}
+
+
+.setup-group {
+
+    margin-bottom: 22px;
+}
+
+
+.setup-group label {
+
+    display: block;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+    color: #444;
+}
+
+
+.setup-group select {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 2px solid #e5e5e5;
+
+    border-radius: 12px;
+
+    background: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    outline: none;
+}
+
+
+.setup-group select:focus {
+
+    border-color: #6c4df6;
+}
+
+
+.setup-start-btn {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6c4df6,
+            #ff5fa2
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.setup-start-btn:hover {
+
+    transform: scale(1.03);
+}
+
+
+.setup-back-btn {
+
+    width: 100%;
+
+    margin-top: 12px;
+
+    padding: 13px;
+
+    border: 2px solid #6c4df6;
+
+    border-radius: 30px;
+
+    background: white;
+
+    color: #6c4df6;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+/* ========================================
+   ANSWER REVIEW PAGE
+======================================== */
+
+.review-page {
+    min-height: 100vh;
+    padding: 50px 20px;
+}
+
+.review-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+
+/* ========================================
+   REVIEW HEADER
+======================================== */
+
+.review-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.review-icon {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.review-header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.review-header p {
+    margin-top: 10px;
+    opacity: 0.75;
+}
+
+
+/* ========================================
+   REVIEW SUMMARY
+======================================== */
+
+.review-summary {
+    display: grid;
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 35px;
+}
+
+.summary-item {
+    padding: 22px;
+    border-radius: 18px;
+
+    text-align: center;
+
+    background: white;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.08);
+}
+
+.summary-item strong {
+    display: block;
+
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+.summary-item span {
+    font-size: 14px;
+}
+
+
+/* ========================================
+   REVIEW CARD
+======================================== */
+
+.review-card {
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.08);
+
+    border-left: 6px solid transparent;
+}
+
+
+/* ========================================
+   QUESTION NUMBER
+======================================== */
+
+.review-question-number {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    opacity: 0.6;
+
+    margin-bottom: 8px;
+}
+
+
+.review-question {
+    font-size: 20px;
+
+    margin-bottom: 18px;
+}
+
+
+/* ========================================
+   STATUS
+======================================== */
+
+.answer-status {
+    display: inline-block;
+
+    padding: 8px 15px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+.correct-status {
+    background: #dff7e5;
+    color: #16803c;
+}
+
+
+.wrong-status {
+    background: #ffe1e1;
+    color: #c62828;
+}
+
+
+.unanswered-status {
+    background: #fff1cc;
+    color: #9a6b00;
+}
+
+
+/* ========================================
+   ANSWER BOX
+======================================== */
+
+.review-answer-box {
+    display: grid;
+
+    gap: 12px;
+}
+
+
+.review-answer-box div {
+    padding: 14px 16px;
+
+    border-radius: 12px;
+
+    background: #f7f8fc;
+}
+
+
+.review-answer-box strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 14px;
+}
+
+
+.review-answer-box span {
+    font-size: 16px;
+}
+
+
+/* ========================================
+   REVIEW ACTIONS
+======================================== */
+
+.review-actions {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ========================================
+   NO REVIEW
+======================================== */
+
+.no-review {
+    text-align: center;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 40px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.08);
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .review-summary {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .review-header h1 {
+        font-size: 28px;
+    }
+
+
+    .review-card {
+        padding: 20px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .review-summary {
+        grid-template-columns:
+            1fr;
+    }
+
+}
+/* ========================================
+   DASHBOARD
+======================================== */
+
+.dashboard-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.dashboard-icon {
+    font-size: 55px;
+}
+
+.dashboard-header h1 {
+    font-size: 36px;
+    margin: 10px 0;
+}
+
+.dashboard-header p {
+    opacity: 0.7;
+}
+/* ========================================
+   PERFORMANCE OVERVIEW
+======================================== */
+
+.performance-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.performance-section h2 {
+    margin-bottom: 8px;
+}
+
+.performance-description {
+    margin-bottom: 20px;
+    opacity: 0.7;
+}
+
+.performance-chart-container {
+    width: 100%;
+    height: 350px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+}.performance-chart-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+
+    display: block;
+}
+
+
+/* ========================================
+   STATISTICS
+======================================== */
+
+.dashboard-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 40px;
+}
+
+.dashboard-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card-icon {
+    font-size: 35px;
+
+    margin-bottom: 8px;
+}
+
+.dashboard-card strong {
+    display: block;
+
+    font-size: 32px;
+}
+
+.dashboard-card span {
+    opacity: 0.7;
+}
+
+
+/* ========================================
+   HISTORY
+======================================== */
+
+.history-section h2 {
+    margin-bottom: 20px;
+}
+
+.history-item {
+    background: white;
+
+    padding: 18px 22px;
+
+    border-radius: 15px;
+
+    margin-bottom: 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0, 0, 0, 0.06);
+}
+
+.history-item strong {
+    display: block;
+}
+
+.history-item small {
+    opacity: 0.6;
+}
+
+
+.history-good {
+    font-weight: bold;
+}
+
+.history-average {
+    font-weight: bold;
+}
+
+.history-bad {
+    font-weight: bold;
+}
+
+
+/* ========================================
+   EMPTY DASHBOARD
+======================================== */
+
+.dashboard-empty {
+    text-align: center;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 20px;
+}
+
+
+/* ========================================
+   ACTIONS
+======================================== */
+
+.dashboard-actions {
+    text-align: center;
+
+    margin-top: 35px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header h1 {
+        font-size: 28px;
+    }
+
+}
+/* ========================================
+   SUBJECT PERFORMANCE
+======================================== */
+
+.subject-section {
+    margin-bottom: 40px;
+}
+
+.subject-section h2 {
+    margin-bottom: 20px;
+}
+
+.subject-performance {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.subject-card {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, 0.08);
+}
+
+.subject-card h3 {
+    margin-top: 0;
+
+    margin-bottom: 15px;
+}
+
+.subject-card p {
+    margin: 8px 0;
+}
+
+.subject-progress {
+    height: 10px;
+
+    background: #eeeeee;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    margin-top: 15px;
+}
+
+.subject-progress div {
+    height: 100%;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #6c5ce7,
+        #00cec9
+    );
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    .subject-performance {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ========================================
+   PERFORMANCE CHART - MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .performance-chart-container {
+        height: 280px;
+
+        padding: 10px;
+
+        border-radius: 15px;
+    }
+
+}
+
+
+@media (max-width: 450px) {
+
+    .performance-chart-container {
+        height: 240px;
+
+        padding: 5px;
+    }
+
+}
+/* =====================================================
+   AUTHENTICATION / REGISTER
+===================================================== */
+
+.auth-container {
+    min-height: 75vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+}
+
+
+.auth-card {
+    width: 100%;
+
+    max-width: 480px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.10);
+}
+
+
+.auth-icon {
+    text-align: center;
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+
+.auth-card h1 {
+    text-align: center;
+
+    margin: 0 0 8px;
+}
+
+
+.auth-subtitle {
+    text-align: center;
+
+    color: #666;
+
+    margin-bottom: 30px;
+}
+
+
+.auth-group {
+    margin-bottom: 18px;
+}
+
+
+.auth-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: 600;
+}
+
+
+.auth-group input {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+
+.auth-group input:focus {
+    border-color: #6366f1;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(99, 102, 241, 0.10);
+}
+
+
+.auth-primary-btn {
+    width: 100%;
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 14px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    background: #6366f1;
+
+    color: white;
+}
+
+
+.auth-primary-btn:hover {
+    opacity: 0.9;
+}
+
+
+.auth-message {
+    min-height: 22px;
+
+    text-align: center;
+
+    margin: 10px 0 15px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+.auth-switch {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #666;
+}
+
+
+.auth-switch button {
+    border: none;
+
+    background: none;
+
+    color: #6366f1;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.auth-back-btn {
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 11px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color: #666;
+}

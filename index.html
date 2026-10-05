@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>QuizMaster</title>
+
+    <!-- Main stylesheet -->
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION BAR
+    ====================================================== -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🎯 QuizMaster
+        </div>
+
+
+        <nav>
+
+            <a
+                href="#"
+                onclick="showHome(); return false;">
+                Home
+            </a>
+
+
+            <a href="#categories">
+                Quizzes
+            </a>
+
+
+            <a href="#">
+                About
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         QUICK ACTION BUTTONS
+    ====================================================== -->
+
+    <div
+        style="
+            text-align:center;
+            padding:20px;
+        ">
+
+        <button
+            onclick="showDashboard()">
+
+            📊 Dashboard
+
+        </button>
+
+
+        <button onclick="openRegister()">📝 Register</button>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         HOME PAGE
+    ====================================================== -->
+
+    <main id="home-page">
+
+
+        <!-- HERO -->
+
+        <section class="hero">
+
+
+            <div class="hero-text">
+
+                <p class="small-title">
+                    WELCOME TO QUIZMASTER
+                </p>
+
+
+                <h1>
+
+                    Test Your Knowledge.<br>
+
+                    <span>
+                        Have Fun!
+                    </span>
+
+                </h1>
+
+
+                <p class="description">
+
+                    Challenge yourself with exciting quizzes,
+                    improve your knowledge and see how much you know.
+
+                </p>
+
+
+                <button
+                    class="start-btn"
+                    onclick="showQuizSetup('civil-engineering')">
+
+                    🚀 Start Quiz
+
+                </button>
+
+            </div>
+
+
+
+            <div class="hero-card">
+
+
+                <div class="trophy">
+                    🏆
+                </div>
+
+
+                <h2>
+                    Ready for the Challenge?
+                </h2>
+
+
+                <p>
+                    Choose a category and start testing your knowledge.
+                </p>
+
+
+                <div class="stats">
+
+
+                    <div>
+
+                        <strong>
+                            100+
+                        </strong>
+
+                        <small>
+                            Questions
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            10+
+                        </strong>
+
+                        <small>
+                            Quizzes
+                        </small>
+
+                    </div>
+
+
+                    <div>
+
+                        <strong>
+                            ∞
+                        </strong>
+
+                        <small>
+                            Fun
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CATEGORY SECTION
+        ================================================== -->
+
+        <section
+            id="categories"
+            class="categories">
+
+
+            <h2>
+                Choose Your Category
+            </h2>
+
+
+            <p class="category-subtitle">
+
+                Pick a topic and challenge yourself!
+
+            </p>
+
+
+            <!-- JavaScript creates categories here -->
+
+            <div
+                id="category-container"
+                class="category-container">
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         QUIZ SETUP PAGE
+    ====================================================== -->
+
+    <main
+        id="setup-page"
+        class="setup-page"
+        style="display:none;">
+
+
+        <div class="setup-card">
+
+
+            <div class="setup-icon">
+                🎯
+            </div>
+
+
+            <h1>
+                Quiz Setup
+            </h1>
+
+
+            <p class="setup-subtitle">
+
+                Customize your quiz before you start!
+
+            </p>
+
+
+
+            <!-- CATEGORY -->
+
+            <div class="setup-group">
+
+                <label for="category-select">
+
+                    📚 Category
+
+                </label>
+
+
+                <select id="category-select">
+
+                </select>
+
+            </div>
+
+
+
+            <!-- DIFFICULTY -->
+
+            <div class="setup-group">
+
+                <label for="difficulty-select">
+
+                    🔥 Difficulty
+
+                </label>
+
+
+                <select id="difficulty-select">
+
+                    <option value="all">
+                        All Levels
+                    </option>
+
+                    <option value="easy">
+                        Easy
+                    </option>
+
+                    <option value="medium">
+                        Medium
+                    </option>
+
+                    <option value="hard">
+                        Hard
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- NUMBER OF QUESTIONS -->
+
+            <div class="setup-group">
+
+                <label for="question-count">
+
+                    📝 Number of Questions
+
+                </label>
+
+
+                <select id="question-count">
+
+                    <option value="5">
+                        5 Questions
+                    </option>
+
+                    <option
+                        value="10"
+                        selected>
+
+                        10 Questions
+
+                    </option>
+
+                    <option value="20">
+                        20 Questions
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- TIME -->
+
+            <div class="setup-group">
+
+                <label for="time-select">
+
+                    ⏱️ Time per Question
+
+                </label>
+
+
+                <select id="time-select">
+
+                    <option value="15">
+                        15 Seconds
+                    </option>
+
+                    <option
+                        value="30"
+                        selected>
+
+                        30 Seconds
+
+                    </option>
+
+                    <option value="60">
+                        60 Seconds
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- START -->
+
+            <button
+                class="setup-start-btn"
+                onclick="startConfiguredQuiz()">
+
+                🚀 Start Quiz
+
+            </button>
+
+
+
+            <!-- BACK -->
+
+            <button
+                class="setup-back-btn"
+                onclick="showHome()">
+
+                ← Back to Home
+
+            </button>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         QUIZ PAGE
+    ====================================================== -->
+
+    <main
+        id="quiz-page"
+        class="quiz-page"
+        style="display:none;">
+
+
+        <div class="quiz-container">
+
+
+            <!-- TOP -->
+
+            <div class="quiz-top">
+
+
+                <span id="question-number">
+
+                    Question 1 of 10
+
+                </span>
+
+
+                <span id="timer">
+
+                    ⏱️ 30
+
+                </span>
+
+
+            </div>
+
+
+
+            <!-- PROGRESS -->
+
+            <div class="progress-container">
+
+                <div id="progress-bar">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- QUESTION -->
+
+            <div class="question-card">
+
+
+                <h2 id="question">
+
+                    Question goes here
+
+                </h2>
+
+
+                <!-- ANSWERS -->
+
+                <div id="answers">
+
+                    <!-- JavaScript creates answers -->
+
+                </div>
+
+
+
+                <!-- NEXT -->
+
+                <button
+                    id="next-btn"
+                    onclick="nextQuestion()">
+
+                    Next →
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         RESULT PAGE
+    ====================================================== -->
+
+    <main
+        id="result-page"
+        class="result-page"
+        style="display:none;">
+
+
+        <div class="result-card">
+
+
+            <div class="result-icon">
+                🏆
+            </div>
+
+
+            <h1>
+                Quiz Completed!
+            </h1>
+
+
+            <p>
+                Your final score is
+            </p>
+
+
+            <div class="score">
+
+                <span id="final-score">
+
+                    0 / 0
+
+                </span>
+
+            </div>
+
+
+            <p id="result-message">
+
+                Great job!
+
+            </p>
+
+
+
+            <!-- TRY AGAIN -->
+
+            <button
+                class="start-btn"
+                onclick="restartQuiz()">
+
+                🔄 Try Again
+
+            </button>
+
+
+
+            <!-- REVIEW -->
+
+            <button
+                class="review-btn"
+                onclick="showAnswerReview()">
+
+                📋 Review Answers
+
+            </button>
+
+
+
+            <!-- HOME -->
+
+            <button
+                class="setup-back-btn"
+                onclick="showHome()">
+
+                🏠 Back to Home
+
+            </button>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         DASHBOARD PAGE
+    ====================================================== -->
+
+    <main
+        id="dashboard-page"
+        style="display:none;">
+
+
+        <div class="dashboard-container">
+
+
+            <!-- DASHBOARD HEADER -->
+
+            <div class="dashboard-header">
+
+
+                <div class="dashboard-icon">
+                    📊
+                </div>
+
+
+                <h1>
+                    My Dashboard
+                </h1>
+
+
+                <p>
+                    Track your quiz performance and progress.
+                </p>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 STATISTICS
+            ================================================== -->
+
+            <div
+                id="dashboard-stats"
+                class="dashboard-stats">
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SUBJECT PERFORMANCE
+            ================================================== -->
+
+            <section class="performance-section">
+
+
+                <div class="performance-card">
+
+
+                    <h2>
+                        Subject Performance
+                    </h2>
+
+
+                    <p class="performance-subtitle">
+
+                        Your performance across different subjects
+
+                    </p>
+
+
+                    <div class="chart-container">
+
+
+                        <canvas
+                            id="subjectPerformanceChart">
+
+                        </canvas>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- =================================================
+                 PERFORMANCE OVERVIEW
+            ================================================== -->
+
+            <div class="performance-section">
+
+
+                <h2>
+                    📈 Performance Overview
+                </h2>
+
+
+                <p class="performance-description">
+
+                    Track your quiz scores and see how your
+                    performance changes over time.
+
+                </p>
+
+
+                <div class="performance-chart-container">
+
+
+                    <canvas
+                        id="performance-chart">
+
+                    </canvas>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 QUIZ HISTORY
+            ================================================== -->
+
+            <div class="history-section">
+
+
+                <h2>
+                    📚 Quiz History
+                </h2>
+
+
+                <div
+                    id="quiz-history"
+                    class="quiz-history">
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 DASHBOARD HOME BUTTON
+            ================================================== -->
+
+            <div class="dashboard-actions">
+
+
+                <button
+                    class="setup-back-btn"
+                    onclick="showHome()">
+
+                    🏠 Back to Home
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         ANSWER REVIEW PAGE
+    ====================================================== -->
+
+    <main
+        id="review-page"
+        class="review-page"
+        style="display:none;">
+
+
+        <div class="review-container">
+
+
+            <!-- HEADER -->
+
+            <div class="review-header">
+
+
+                <div class="review-icon">
+                    📋
+                </div>
+
+
+                <h1>
+                    Answer Review
+                </h1>
+
+
+                <p>
+
+                    Review your answers and learn from your mistakes.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- REVIEW SUMMARY -->
+
+            <div
+                id="review-summary"
+                class="review-summary">
+
+            </div>
+
+
+
+            <!-- REVIEW LIST -->
+
+            <div
+                id="review-list"
+                class="review-list">
+
+            </div>
+
+
+
+            <!-- REVIEW BUTTONS -->
+
+            <div class="review-actions">
+
+
+                <button
+                    class="start-btn"
+                    onclick="restartQuiz()">
+
+                    🔄 Try Again
+
+                </button>
+
+
+                <button
+                    class="setup-back-btn"
+                    onclick="showHome()">
+
+                    🏠 Back to Home
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         REGISTER PAGE
+    ====================================================== -->
+
+    <main
+        id="register-page"
+        style="display:none;">
+
+
+        <div class="auth-container">
+
+
+            <div class="auth-card">
+
+
+                <div class="auth-icon">
+                    📝
+                </div>
+
+
+                <h1>
+                    Create Account
+                </h1>
+
+
+                <p class="auth-subtitle">
+
+                    Register to start your QuizMaster journey.
+
+                </p>
+
+
+
+                <!-- NAME -->
+
+                <div class="auth-group">
+
+
+                    <label for="register-name">
+
+                        👤 Full Name
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="register-name"
+                        placeholder="Enter your full name"
+                        autocomplete="name">
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="auth-group">
+
+
+                    <label for="register-email">
+
+                        📧 Email
+
+                    </label>
+
+
+                    <input
+                        type="email"
+                        id="register-email"
+                        placeholder="Enter your email"
+                        autocomplete="email">
+
+                </div>
+
+
+
+                <!-- PASSWORD -->
+
+                <div class="auth-group">
+
+
+                    <label for="register-password">
+
+                        🔒 Password
+
+                    </label>
+
+
+                    <input
+                        type="password"
+                        id="register-password"
+                        placeholder="Create a password"
+                        autocomplete="new-password">
+
+                </div>
+
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="auth-group">
+
+
+                    <label for="register-confirm-password">
+
+                        🔐 Confirm Password
+
+                    </label>
+
+
+                    <input
+                        type="password"
+                        id="register-confirm-password"
+                        placeholder="Confirm your password"
+                        autocomplete="new-password">
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div
+                    id="register-message"
+                    class="auth-message">
+
+                </div>
+
+
+
+                <!-- REGISTER -->
+
+                <button
+                    class="auth-primary-btn"
+                    onclick="registerUser()">
+
+                    🚀 Create Account
+
+                </button>
+
+
+
+                <!-- LOGIN -->
+
+                <p class="auth-switch">
+
+                    Already have an account?
+
+
+                    <button
+                        type="button"
+                        onclick="showLogin()">
+
+                        Login
+
+                    </button>
+
+                </p>
+
+
+
+                <!-- BACK -->
+
+                <button
+                    class="auth-back-btn"
+                    onclick="showHome()">
+
+                    ← Back to Home
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </main>
+<!-- =====================================================
+     LOGIN PAGE
+===================================================== -->
+
+<main
+    id="login-page"
+    style="display:none;">
+
+    <div class="auth-container">
+
+        <div class="auth-card">
+
+            <div class="auth-icon">
+                🔐
+            </div>
+
+            <h1>
+                Welcome Back
+            </h1>
+
+            <p class="auth-subtitle">
+                Login to continue your QuizMaster journey.
+            </p>
+
+
+            <!-- EMAIL -->
+
+            <div class="auth-group">
+
+                <label for="login-email">
+                    📧 Email
+                </label>
+
+                <input
+                    type="email"
+                    id="login-email"
+                    placeholder="Enter your email"
+                    autocomplete="email">
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="auth-group">
+
+                <label for="login-password">
+                    🔒 Password
+                </label>
+
+                <input
+                    type="password"
+                    id="login-password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password">
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div
+                id="login-message"
+                class="auth-message">
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                class="auth-primary-btn"
+                onclick="loginUser()">
+
+                🔓 Login
+
+            </button>
+
+
+            <!-- REGISTER -->
+
+            <p class="auth-switch">
+
+                Don't have an account?
+
+                <button onclick="openRegister()">📝 Register</button>
+
+            </p>
+
+
+            <!-- BACK -->
+
+            <button
+                class="auth-back-btn"
+                onclick="showHome()">
+
+                ← Back to Home
+
+            </button>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+
+        <p>
+
+            © 2026 QuizMaster |
+            Learn • Play • Challenge
+
+        </p>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT FILES
+         
+         KEEP THIS ORDER
+    ====================================================== -->
+
+    <!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- YOUR JAVASCRIPT -->
+<script src="data/categories.js"></script>
+<script src="data/civil.js"></script>
+<script src="data/mathematics.js"></script>
+<script src="data/computer.js"></script>
+<script src="data/general-knowledge.js"></script>
+
+<script src="js/data.js"></script>
+<script src="js/quiz.js"></script>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+
+
+</body>
+
+</html>
